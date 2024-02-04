@@ -1,0 +1,1 @@
+print("vscode extension settings")
