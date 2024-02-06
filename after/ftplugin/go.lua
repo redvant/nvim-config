@@ -4,7 +4,6 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = false
 
-
 -- Go shortcuts
 vim.keymap.set("n", "<leader>gt", function()
     vim.cmd("!go test")
@@ -17,14 +16,15 @@ vim.keymap.set("n", "<leader>gf", function()
     local path = vim.api.nvim_buf_get_name(0)
     vim.cmd("!go fmt " .. path)
 end)
-]]--
+]]
+--
 
 -- On Save format with gopls and OrganizeImports(add and organize)
-vim.api.nvim_create_autocmd('BufWritePre', {
-    group = vim.api.nvim_create_augroup('LspGo', {}),
+vim.api.nvim_create_autocmd("BufWritePre", {
+    group = vim.api.nvim_create_augroup("LspGo", {}),
     callback = function()
         local params = vim.lsp.util.make_range_params()
-        params.context = {only = {"source.organizeImports"}}
+        params.context = { only = { "source.organizeImports" } }
         local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params)
         for cid, res in pairs(result or {}) do
             for _, r in pairs(res.result or {}) do
