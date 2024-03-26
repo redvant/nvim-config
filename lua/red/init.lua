@@ -1,6 +1,7 @@
 require("red.remap")
 require("red.set")
 require("red.lazy")
+require("red.luasnip")
 
 -- Habamax
 --vim.cmd([[
