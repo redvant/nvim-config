@@ -24,6 +24,11 @@ return {
                         mode = 4,
                         max_length = vim.o.columns * 0.85,
                         buffers_color = { active = { fg = colors.fg, bg = colors.green } },
+                        symbols = {
+                            modified = " ", -- 
+                            alternate_file = "#",
+                            directory = "",
+                        },
                     },
                 },
                 lualine_y = {},
