@@ -8,6 +8,17 @@ return {
             "saadparwaiz1/cmp_luasnip",
             "rafamadriz/friendly-snippets",
         },
+        config = function()
+            local ls = require("luasnip")
+            local s = ls.snippet
+            local t = ls.text_node
+
+            ls.add_snippets("markdown", {
+                s("prettierign", {
+                    t('<!-- prettier-ignore -->')
+                })
+            })
+        end
     },
     {
         "hrsh7th/nvim-cmp",
