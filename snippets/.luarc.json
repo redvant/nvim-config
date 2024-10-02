@@ -1,0 +1,9 @@
+{
+    // Globals set in snip_env, available in all the filetype snippet files.
+    // To get a full list of the globals available by default go to:
+    // https://github.com/L3MON4D3/LuaSnip/blob/master/lua/luasnip/default_config.lua
+    "diagnostics.globals": [
+        "s", // require("luasnip.nodes.snippet").S
+        "t", // require("luasnip.nodes.textNode").T
+    ]
+}
