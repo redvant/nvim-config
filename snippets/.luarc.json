@@ -5,5 +5,7 @@
     "diagnostics.globals": [
         "s", // require("luasnip.nodes.snippet").S
         "t", // require("luasnip.nodes.textNode").T
+        "i", // require("luasnip.nodes.insertNode").I
+        "fmt", // require("luasnip.extras.fmt").fmt
     ]
 }
