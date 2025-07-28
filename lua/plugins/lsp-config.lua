@@ -9,7 +9,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "gopls", "clangd", "jdtls" },
+                ensure_installed = { "lua_ls", "gopls", "clangd", "jdtls", "csharp_ls" },
             })
         end,
     },
@@ -46,6 +46,7 @@ return {
                     -- completeUnimported = true,
                 },
             })
+            lspconfig.csharp_ls.setup{}
 
             vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
             vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
