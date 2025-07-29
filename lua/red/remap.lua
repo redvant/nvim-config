@@ -7,6 +7,9 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open netrw on current fi
 -- cicle quickfix list
 vim.keymap.set("n", "<C-j>", vim.cmd.cnext, { desc = "Next item in quickfix" })
 vim.keymap.set("n", "<C-k>", vim.cmd.cprev, { desc = "Previous item in quickfix" })
+-- cicle location list
+vim.keymap.set("n", "<C-S-j>", vim.cmd.lnext, { desc = "Next item in location list" })
+vim.keymap.set("n", "<C-S-k>", vim.cmd.lprev, { desc = "Previous item in location list" })
 
 -- replace selected with latest register, and send text to replace to nul register
 vim.keymap.set("v", "<leader>p", '"_dp', { desc = "Replace selected with latest register, send to null register" })
