@@ -1,8 +1,8 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<C-i>", "<cmd>silent !tmux neww cht.sh<CR>")
+-- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+-- vim.keymap.set("n", "<C-i>", "<cmd>silent !tmux neww cht.sh<CR>")
 
 -- cicle quickfix list
 vim.keymap.set("n", "<C-j>", vim.cmd.cnext)
