@@ -20,6 +20,13 @@ return {
 		local wk = require("which-key")
 		wk.add({
 			{ "<leader>m", group = "markdown" },
+			{ "<leader>d", group = "debug" },
+			{ "<leader>dg", group = "debug go" },
+			{ "<leader>c", group = "code actions" },
+			{ "<leader>p", group = "search" },
+			{ "<leader>l", group = "log point" },
+			{ "<leader>g", group = "format" },
+			{ "<leader>r", group = "rename" },
 		})
 	end,
 }
