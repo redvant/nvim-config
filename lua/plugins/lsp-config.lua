@@ -48,10 +48,10 @@ return {
             })
             lspconfig.csharp_ls.setup{}
 
-            vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
-            vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-            vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-            vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
+            vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Diagnostics open float" })
+            vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Diagnostics go to previous" })
+            vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Diagnostics go to next" })
+            vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Diagnostics open location list" })
 
             vim.api.nvim_create_autocmd("LspAttach", {
                 group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -59,14 +59,13 @@ return {
                     -- Enable completion triggered by <c-x><c-o>
                     vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
-                    local opts = { buffer = ev.buf }
-                    vim.keymap.set("n", "<leader>f", vim.lsp.buf.hover, opts)
-                    vim.keymap.set("i", "<C-f>", vim.lsp.buf.signature_help, opts)
-                    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-                    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-                    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-                    vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
-					vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+                    vim.keymap.set("n", "<leader>f", vim.lsp.buf.hover, { buffer = ev.buf , desc = "LSP show hover" })
+                    vim.keymap.set("i", "<C-f>", vim.lsp.buf.signature_help, { buffer = ev.buf , desc = "LSP signature help" })
+                    vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = ev.buf , desc = "LSP go to definition" })
+                    vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = ev.buf , desc = "LSP go to references" })
+                    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = ev.buf , desc = "LSP rename" })
+                    vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { buffer = ev.buf , desc = "LSP code action" })
+					vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { buffer = ev.buf, desc = "LSP format"})
                 end,
             })
         end,
