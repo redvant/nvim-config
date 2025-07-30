@@ -43,6 +43,8 @@ return {
                     cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy")
                 }
             end, { desc = "Show neovim packages (Telescope)" })
+
+            require("config.telescope.multigrep").setup()
         end,
     },
     {
