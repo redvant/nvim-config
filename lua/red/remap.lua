@@ -4,6 +4,10 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open netrw on current fi
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 -- vim.keymap.set("n", "<C-i>", "<cmd>silent !tmux neww cht.sh<CR>")
 
+-- Cycle buffers
+vim.keymap.set("n", "<C-l>", vim.cmd.bn, { desc = "Next buffer" })
+vim.keymap.set("n", "<C-h>", vim.cmd.bp, { desc = "Previous buffer" })
+
 -- cicle quickfix list
 vim.keymap.set("n", "<C-j>", vim.cmd.cnext, { desc = "Next item in quickfix" })
 vim.keymap.set("n", "<C-k>", vim.cmd.cprev, { desc = "Previous item in quickfix" })
