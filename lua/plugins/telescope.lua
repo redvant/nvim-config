@@ -32,17 +32,17 @@ return {
             vim.keymap.set("n", "<leader>pk", builtin.keymaps, { desc = "Telescope keymaps" })
             vim.keymap.set("n", "<leader>ph", builtin.help_tags, { desc = "Telescope help tags" })
 
-            vim.keymap.set("n", "<leader>en", function()
+            vim.keymap.set("n", "<leader>nc", function()
                 builtin.find_files{
                     cwd = vim.fn.stdpath("config")
                 }
-            end, { desc = "Edit neovim config (Telescope)" })
+            end, { desc = "Neovim config files (Telescope)" })
 
-            vim.keymap.set("n", "<leader>ep", function()
+            vim.keymap.set("n", "<leader>nf", function()
                 builtin.find_files{
                     cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy")
                 }
-            end, { desc = "Show neovim packages (Telescope)" })
+            end, { desc = "Neovim lazy files (Telescope)" })
 
             require("config.telescope.multigrep").setup()
         end,

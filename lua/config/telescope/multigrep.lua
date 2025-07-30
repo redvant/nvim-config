@@ -51,6 +51,10 @@ end
 
 M.setup = function()
     vim.keymap.set("n", "<leader>pm", live_multigrep, { desc = "Telescope multi grep" })
+    vim.keymap.set("n", "<leader>nm", function ()
+        local opts = { cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy") }
+        live_multigrep(opts)
+    end, { desc = "Neovim lazy multigrep (Telescope)" })
 end
 
 return M

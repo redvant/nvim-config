@@ -19,14 +19,15 @@ return {
 	config = function()
 		local wk = require("which-key")
 		wk.add({
-			{ "<leader>m", group = "markdown" },
+			{ "<leader>m", group = "markdown", icon = "" },
 			{ "<leader>d", group = "debug" },
 			{ "<leader>dg", group = "debug go" },
 			{ "<leader>c", group = "code actions" },
 			{ "<leader>p", group = "search" },
-			{ "<leader>l", group = "log point" },
+			{ "<leader>n", group = "neovim config", icon = "" },
+			{ "<leader>l", group = "log point", icon = "󰰍" },
 			{ "<leader>g", group = "format" },
-			{ "<leader>r", group = "rename" },
+			{ "<leader>r", group = "rename", icon = "󰑕" },
 		})
 	end,
 }
