@@ -8,6 +8,9 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open netrw on current fi
 vim.keymap.set("n", "<C-l>", vim.cmd.bn, { desc = "Next buffer" })
 vim.keymap.set("n", "<C-h>", vim.cmd.bp, { desc = "Previous buffer" })
 
+-- Delete current buffer
+vim.keymap.set("n", "<C-w>b", vim.cmd.bd, { desc = "Delete current buffer" })
+
 -- cicle quickfix list
 vim.keymap.set("n", "<C-j>", vim.cmd.cnext, { desc = "Next item in quickfix" })
 vim.keymap.set("n", "<C-k>", vim.cmd.cprev, { desc = "Previous item in quickfix" })
