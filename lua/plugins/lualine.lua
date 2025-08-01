@@ -7,33 +7,31 @@ local colors = {
 return {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-        require("lualine").setup({
-            options = {
-                theme = "moonfly",
-                component_separators = { left = "|", right = "|" },
-                section_separators = { left = "", right = "" },
-            },
-            sections = {
-                lualine_a = { "mode" },
-                lualine_b = { "branch", "diff", "diagnostics" },
-                lualine_c = {},
-                lualine_x = {
-                    {
-                        "buffers",
-                        mode = 4,
-                        max_length = vim.o.columns * 0.85,
-                        buffers_color = { active = { fg = colors.fg, bg = colors.green } },
-                        symbols = {
-                            modified = " ", -- 
-                            alternate_file = "#",
-                            directory = "",
-                        },
+    opts = {
+        options = {
+            theme = "moonfly",
+            component_separators = { left = "|", right = "|" },
+            section_separators = { left = "", right = "" },
+        },
+        sections = {
+            lualine_a = { "mode" },
+            lualine_b = { "branch", "diff", "diagnostics" },
+            lualine_c = {},
+            lualine_x = {
+                {
+                    "buffers",
+                    mode = 4,
+                    max_length = vim.o.columns * 0.85,
+                    buffers_color = { active = { fg = colors.fg, bg = colors.green } },
+                    symbols = {
+                        modified = " ", -- 
+                        alternate_file = "#",
+                        directory = "",
                     },
                 },
-                lualine_y = {},
-                lualine_z = { "location" },
             },
-        })
-    end,
+            lualine_y = {},
+            lualine_z = { "location" },
+        },
+    },
 }
