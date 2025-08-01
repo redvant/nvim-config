@@ -26,7 +26,7 @@ return {
 			{ "<leader>p", group = "search" },
 			{ "<leader>n", group = "neovim config", icon = "" },
 			{ "<leader>l", group = "log point", icon = "󰰍" },
-			{ "<leader>g", group = "format" },
+			{ "<leader>g", group = "golang", icon = "" },
 			{ "<leader>r", group = "rename", icon = "󰑕" },
 		})
 	end,

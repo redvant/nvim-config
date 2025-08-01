@@ -7,7 +7,7 @@ vim.opt.expandtab = false
 -- Go shortcuts
 vim.keymap.set("n", "<leader>gt", function()
     vim.cmd("!go test")
-end)
+end, { desc = "Go run tests" })
 
 -- Replaced for BufWritePre and none-ls keymap
 --[[

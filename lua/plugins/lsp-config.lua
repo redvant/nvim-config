@@ -65,7 +65,7 @@ return {
                     vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = ev.buf , desc = "LSP go to references" })
                     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = ev.buf , desc = "LSP rename" })
                     vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { buffer = ev.buf , desc = "LSP code action" })
-					vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { buffer = ev.buf, desc = "LSP format"})
+					vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { buffer = ev.buf, desc = "LSP format"})
                 end,
             })
         end,
