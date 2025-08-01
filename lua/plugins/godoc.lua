@@ -5,14 +5,18 @@ return {
         { "nvim-telescope/telescope.nvim" }, -- optional
         { "nvim-treesitter/nvim-treesitter", opts = { ensure_installed = { "go" } } },
     },
-    build = "go install github.com/lotusirous/gostdsym/stdsym@latest", -- optional
-    cmd = { "GoDoc" },                                              -- optional
+    build = "go install github.com/lotusirous/gostdsym/stdsym@latest",
+    cmd = { "GoDoc" },
     opts = {
         picker = {
             type = "telescope",
         },
     },
-    init = function()
-        vim.keymap.set("n", "<leader>gd", vim.cmd.GoDoc, { desc = "Go search docs (Telescope)" })
-    end,
+    keys = {
+        {
+            "<leader>gd",
+            vim.cmd.GoDoc,
+            desc = "Go search docs (Telescope)",
+        },
+    },
 }
