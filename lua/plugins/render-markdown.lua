@@ -1,12 +1,18 @@
 return {
-	"MeanderingProgrammer/render-markdown.nvim",
-	opts = {},
-	dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
-	config = function()
-		local renderMarkdown = require("render-markdown")
-		renderMarkdown.setup({
-			bullet = { icons = { "", "", "◆", "◇" } },
-		})
-		vim.keymap.set("n", "<leader>mr", renderMarkdown.toggle, { desc = "Toggle renderMarkdown" })
-	end,
+    "MeanderingProgrammer/render-markdown.nvim",
+    ft = "markdown",
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+    opts = {
+        bullet = { icons = { "", "", "◆", "◇" } },
+    },
+    keys = {
+        {
+            "<leader>mr",
+            function()
+                require("render-markdown").toggle()
+            end,
+            ft = "markdown",
+            desc = "Toggle renderMarkdown",
+        },
+    },
 }
