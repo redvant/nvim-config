@@ -4,12 +4,14 @@ return {
         dependencies = {
             "leoluz/nvim-dap-go",
             'nicholasmata/nvim-dap-cs',
+            'mfussenegger/nvim-dap-python',
         },
         config = function()
             local dap = require("dap")
             local dapgo = require("dap-go")
             dapgo.setup()
             require("dap-cs").setup()
+            require("dap-python").setup("debugpy-adapter")
 
             vim.keymap.set("n", "<F7>", dap.continue, { desc = "Dap continue" })
             vim.keymap.set("n", "<F8>", dap.step_over, { desc = "Dap step over" })
