@@ -9,7 +9,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "gopls", "clangd", "jdtls", "csharp_ls" },
+                ensure_installed = { "lua_ls", "gopls", "clangd", "jdtls", "csharp_ls", "bashls" },
             })
         end,
     },
@@ -47,6 +47,7 @@ return {
                 },
             })
             lspconfig.csharp_ls.setup{}
+            lspconfig.bashls.setup {}
 
             vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Diagnostics open float" })
             vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Diagnostics go to previous" })
